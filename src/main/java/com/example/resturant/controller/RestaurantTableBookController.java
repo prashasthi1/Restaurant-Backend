@@ -9,6 +9,7 @@ import com.example.resturant.service.RestaurantTableBookService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,12 +31,14 @@ public class RestaurantTableBookController {
     @Autowired
     RestaurantTableBookService restaurantTableBookService;
 
+    @CrossOrigin
     @PostMapping("/add-tablebooking")
     public RestaurantTableBook setBooking(
             @RequestBody RestaurantTableBook restaurantTableBook) {
         return restaurantTableBookService.setBooking(restaurantTableBook);
     }
-
+    
+    @CrossOrigin
     @GetMapping("/view-all-tablebookings")
     public List<RestaurantTableBook> getAllBookings() {
         return restaurantTableBookService.getAllBookings();
@@ -46,6 +49,7 @@ public class RestaurantTableBookController {
         restaurantTableBookService.deleteBookingById(id);
     }
 
+    @CrossOrigin
     @PutMapping("/update-tablebooking/{id}")
     public RestaurantTableBook updateBookingById(
             @RequestBody RestaurantTableBook restaurantTableBook, 
@@ -53,18 +57,21 @@ public class RestaurantTableBookController {
         return restaurantTableBookService.updateBookingById(restaurantTableBook, id);
     }
 
+    @CrossOrigin
     @GetMapping("/view-tablebooking-by-email")
     public List<RestaurantTableBook> getBookingsByEmail(
             @RequestParam("email") String email) {
         return restaurantTableBookService.getBookingsByEmail(email);
     }
 
+    @CrossOrigin
     @GetMapping("/view-tablebooking-by-id")
     public Optional<RestaurantTableBook> getBookingById(
             @RequestParam("id") int id) {
         return restaurantTableBookService.getBookingById(id);
     }
 
+    @CrossOrigin
     @GetMapping("/view-tablebooking-by-status")
     public List<RestaurantTableBook> getBookingsByStatus(
             @RequestParam("status") String status) {

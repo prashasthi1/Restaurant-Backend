@@ -25,13 +25,13 @@ public class RestaurantTableBook {
     @Column(name = "book_id")
     private int bookId;
 
-    @Column(name = "customer_name", nullable = false)
+    @Column(name = "customer_name")
     private String customerName;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "booking_count", nullable = false)
+    @Column(name = "booking_count")
     private int bookingCount;
 
     @Column(name = "date_time")
