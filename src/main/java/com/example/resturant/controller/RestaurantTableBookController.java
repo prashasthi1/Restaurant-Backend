@@ -44,6 +44,7 @@ public class RestaurantTableBookController {
         return restaurantTableBookService.getAllBookings();
     }
 
+    @CrossOrigin
     @DeleteMapping("/delete-tablebooking/{id}")
     public void deleteBookingById(@PathVariable("id") int id) {
         restaurantTableBookService.deleteBookingById(id);

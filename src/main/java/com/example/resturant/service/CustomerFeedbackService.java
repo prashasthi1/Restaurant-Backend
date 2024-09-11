@@ -29,5 +29,8 @@ public class CustomerFeedbackService {
     public List<CustomerFeedback> getAllFeedback() {
         return customerFeedbackRepository.findAll();
     }
-
+    
+    public void deleteFeedbackById(int feedbackId) {
+        customerFeedbackRepository.deleteById(feedbackId);
+    }
 }
